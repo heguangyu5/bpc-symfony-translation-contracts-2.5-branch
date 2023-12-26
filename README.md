@@ -1,3 +1,10 @@
+# BPC Notes: How to make?
+
+```shell
+make libsymfony-contracts-translation.so && sudo make install-libsymfony-contracts-translation
+sudo ldconfig
+```
+
 Symfony Translation Contracts
 =============================
 

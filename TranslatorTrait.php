@@ -37,7 +37,11 @@ trait TranslatorTrait
      */
     public function getLocale()
     {
-        return $this->locale ?: (class_exists(\Locale::class) ? \Locale::getDefault() : 'en');
+        if (defined('__BPC__')) {
+            return $this->locale ? $this->locale : 'en';
+        } else {
+            return $this->locale ?: (class_exists(\Locale::class) ? \Locale::getDefault() : 'en');
+        }
     }
 
     /**
